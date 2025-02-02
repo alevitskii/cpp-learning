@@ -38,7 +38,6 @@ private:
   std::uint8_t m_data{};
 
 public:
-  // Don't worry about the details of the implementation of these functions
   void set(int index, bool value)
   {
     // Figure out which bit we're setting/unsetting

@@ -8,7 +8,7 @@ preferred to an overloaded typecast, as it allows the type being constructed to 
 
 There are a few cases where an overloaded typecast should be used instead:
 - when providing a conversion to a fundamental type (since you can't define constructors for these types). Most
-idiomatically, these are used to provide a conversion to bool where it makes;
+idiomatically, these are used to provide a conversion to bool where it makes sense;
 - when providing a conversion to a type you can't add members to (e.g. a conversion to std::vector);
 - when you do not want the type being constructed to be aware of the type being converted from. This can be helpful for
 avoiding circular dependencies (e.g. std::string -> std::string_view conversion is implemented as a typecast in

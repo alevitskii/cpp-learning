@@ -32,7 +32,7 @@ int main()
   // pointer to a function returning int and taking int
   int (*fcnPtr2)(int){ &hoo };
 
-  int (*fcnPtr3)(){ foo }; // okay, foo implicitly converts to function pointer to foo
+  int (*fcnPtr3)(){ foo }; // okay, foo implicitly converts to function pointer
   // void* vPtr{ foo }; // not okay, though some compilers may allow
 
   int (*fcnPtr4)(){ nullptr };
@@ -40,9 +40,9 @@ int main()
   // constant pointer to a function returning int and taking no arguments
   int (*const fcnPtr5)(){ &foo };
 
-  int (*fcnPtr6)(int){ &hoo }; // Initialize fcnPtr with function foo
-  (*fcnPtr6)(5); // call function foo(5) through fcnPtr.
-  fcnPtr6(5); // call function foo(5) through fcnPtr.
+  int (*fcnPtr6)(int){ &hoo }; // Initialize fcnPtr with function hoo
+  (*fcnPtr6)(5); // call function hoo(5) through fcnPtr.
+  fcnPtr6(5); // call function hoo(5) through fcnPtr.
 
   // Because the resolution happens at runtime, default arguments are not resolved when a function is called through a
   // function pointer.

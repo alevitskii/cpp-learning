@@ -3,7 +3,7 @@
 #include <type_traits>
 
 /*
-Use type deduction for your variables when the type of the object doesn’t matter.
+Use type deduction for your variables when the type of the object doesn't matter.
 Favor an explicit type when you require a specific type that differs from the type of the initializer, or when your
 object is used in a context where making the type obvious is useful.
 */

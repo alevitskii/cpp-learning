@@ -105,7 +105,7 @@ int main()
   assert(FixedPoint2{ 0.75 } == FixedPoint2{ 0.75 }); // Test equality true
   assert(!(FixedPoint2{ 0.75 } == FixedPoint2{ 0.76 })); // Test equality false
 
-  // Test additional cases -- h/t to reader Sharjeel Safdar for these test cases
+  // Test additional cases
   assert(FixedPoint2{ 0.75 } + FixedPoint2{ 1.23 } == FixedPoint2{ 1.98 }); // both positive, no decimal overflow
   assert(FixedPoint2{ 0.75 } + FixedPoint2{ 1.50 } == FixedPoint2{ 2.25 }); // both positive, with decimal overflow
   assert(FixedPoint2{ -0.75 } + FixedPoint2{ -1.23 } == FixedPoint2{ -1.98 }); // both negative, no decimal overflow

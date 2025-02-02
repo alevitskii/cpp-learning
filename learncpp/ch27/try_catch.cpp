@@ -51,7 +51,7 @@ int main()
     std::cerr << "We caught an exception of type std::string\n";
     // throw without a value can be used to rethrow the exact same exception object (no copying or slicing made)
     throw;
-#ifndef NDEBUG // if we're in release node
+#ifndef NDEBUG // if we're in release mode
   } catch (...) { // must go last
     /*
     If your program uses exceptions, consider using a catch-all handler in main, to help ensure orderly behavior if an

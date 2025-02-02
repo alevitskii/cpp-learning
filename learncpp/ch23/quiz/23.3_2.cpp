@@ -24,7 +24,7 @@ private:
 public:
   Department() = default;
 
-  void add(const Teacher& t) { m_teachers.emplace_back(t); }
+  void add(const Teacher& t) { m_teachers.push_back(t); }
 
   friend std::ostream& operator<<(std::ostream& os, const Department& d)
   {

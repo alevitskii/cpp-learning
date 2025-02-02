@@ -6,7 +6,7 @@ public:
   PoweredDevice(int power) { std::cout << "PoweredDevice: " << power << '\n'; }
 };
 
-class Scanner : virtual public PoweredDevice // note: PoweredDevice is now a virtual base class
+class Scanner : virtual public PoweredDevice // note: PoweredDevice is a virtual base class
 {
 public:
   Scanner(int scanner, int power)
@@ -16,7 +16,7 @@ public:
   }
 };
 
-class Printer : virtual public PoweredDevice // note: PoweredDevice is now a virtual base class
+class Printer : virtual public PoweredDevice // note: PoweredDevice is a virtual base class
 {
 public:
   Printer(int printer, int power)

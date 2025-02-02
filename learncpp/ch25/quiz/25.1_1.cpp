@@ -17,12 +17,11 @@ protected:
   std::string m_name;
   std::string m_speak;
 
-  // We're making this constructor protected because
-  // we don't want people creating Animal objects directly,
-  // but we still want derived classes to be able to use it.
+  // We're making this constructor protected because we don't want people creating Animal objects directly, but we still
+  // want derived classes to be able to use it.
   Animal(std::string_view name, std::string_view speak) : m_name{ name }, m_speak{ speak } {}
 
-  // To prevent slicing (covered later)
+  // To prevent slicing
   Animal(const Animal&) = delete;
   Animal& operator=(const Animal&) = delete;
 

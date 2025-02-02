@@ -45,7 +45,7 @@ int main()
   std::cout << clist[2] << '\n';
 
   IntList* list2{ new IntList{} };
-  // list2[2] = 3; // make sure you’re not trying to call an overloaded operator[] on a pointer to an object (may result
+  // list2[2] = 3; // make sure you're not trying to call an overloaded operator[] on a pointer to an object (may result
   // in UB)
   (*list2)[2] = 3; // get our IntList object, then call overloaded operator[], ugly but ok
   delete list2;

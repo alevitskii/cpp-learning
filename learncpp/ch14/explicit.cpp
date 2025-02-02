@@ -44,7 +44,7 @@ void printEmployee(Employee e) // has an Employee parameter
 int main()
 {
   /*
-  The C++ standard doesn’t have specific rules that tell the compiler how to convert values to (or from) a
+  The C++ standard doesn't have specific rules that tell the compiler how to convert values to (or from) a
   program-defined type.
   Instead, the compiler will look to see if we have defined some function that it can use to perform such a conversion.
   Such a function is called a user-defined conversion.

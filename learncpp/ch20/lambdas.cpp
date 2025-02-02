@@ -13,7 +13,7 @@ Lambdas are special objects called functors (contain overloaded operator()).
 
 int main()
 {
-  // if return type is not specified (then its auto), parameters `()` may be omited
+  // if return type is not specified then its auto, parameters `()` may be omited
   // [] {}; // a lambda with an omitted return type, no captures, and omitted parameters
 
   constexpr std::array<std::string_view, 4> arr{ "apple", "banana", "walnut", "lemon" };

@@ -28,10 +28,21 @@ double findAverage(int count, ...)
   return static_cast<double>(sum) / count;
 }
 
+// (C++17) Fold expressions. Not sure if it's the right implementation.
+template<int N, typename... Args> double findAverage2(Args&&... args)
+{
+  static_assert(N >= 0, "Must be >= 0");
+  if constexpr (N == 0) { return 0; }
+  return static_cast<double>((args + ... + 0)) / N;
+}
+
 int main()
 {
   std::cout << findAverage(5, 1, 2, 3, 4, 5) << '\n';
   std::cout << findAverage(6, 1, 2, 3, 4, 5, 6) << '\n';
+
+  std::cout << findAverage2<6>(5, 1, 2, 3, 4, 5) << '\n';
+  std::cout << findAverage2<0>() << '\n';
 
   // C++17, consider fold expressions https://en.cppreference.com/w/cpp/language/fold
 

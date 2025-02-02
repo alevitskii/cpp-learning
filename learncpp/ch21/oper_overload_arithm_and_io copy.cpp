@@ -10,13 +10,13 @@ Can't create new operators.
 Can't be overloaded: conditional (?:), sizeof, scope (::), member selector (.), pointer member selector (.*), typeid,
 and the casting operators.
 It is not possible to change the number of operands an operator supports.
-All operators keep their default precedence and associativity (regardless of what they’re used for) and this can not be
+All operators keep their default precedence and associativity (regardless of what they're used for) and this can not be
 changed.
 
 Best practices:
 1. An overloaded operator should operate on at least one program-defined type (either as a parameter of the function, or
 the implicit object);
-2. When overloading operators, it’s best to keep the function of the operators as close to the original intent of the
+2. When overloading operators, it's best to keep the function of the operators as close to the original intent of the
 operators as possible;
 3. If the meaning of an overloaded operator is not clear and intuitive, use a named function instead;
 4. Operators that do not modify their operands (e.g. arithmetic operators) should generally return results by value;
@@ -92,7 +92,6 @@ public:
   Point(double x = 0.0, double y = 0.0, double z = 0.0) : m_x{ x }, m_y{ y }, m_z{ z } {}
 
   friend std::ostream& operator<<(std::ostream& out, const Point& point);
-  friend std::istream& operator>>(std::istream& in, Point& point);
 
   Point operator-() const;
   Point operator+() const;

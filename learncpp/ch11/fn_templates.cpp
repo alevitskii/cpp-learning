@@ -16,7 +16,8 @@ T max(T x, T y) // this is the function template definition for max<T>
 // A declaration for our function template (we don't need the definition any more).
 template<typename T> T max(T x, T y);
 
-// This is specialization (or a function instance).
+// This is a specialization (or a function instance). A full specialization in this case. Full specializations are not
+// implicitly inline (partial are), they should be marked `inline` when placed in a header file.
 // The template from which this specialization is produced is called a "primary template"
 template<> int max<int>(int x, int y) // the generated function max<int>(int, int)
 {
@@ -138,7 +139,7 @@ void print()
 
 int main()
 {
-  // When a function is instantiated due to a function call, it’s called implicit instantiation.
+  // When a function is instantiated due to a function call, it's called implicit instantiation.
   std::cout << max<int>(1, 2) << '\n'; // instantiates and calls function max<int>(int, int)
   // Arguments conversion will happen here.
   std::cout << max<double>(1, 2) << '\n'; // instantiates and calls function max<double>(double, double)

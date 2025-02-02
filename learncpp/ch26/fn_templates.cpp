@@ -14,7 +14,7 @@ void print<double>(const double& d) // specialized for type double
 // can be deleted
 template<> void print<char>(const char& c) = delete;
 
-// not that with non-template version you don't need the parameter be const ref like in the specialization
+// note that with non-template version you don't need the parameter to be const ref like in the specialization
 void print(double d) { std::cout << std::scientific << d << '\n'; }
 
 

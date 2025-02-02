@@ -7,10 +7,10 @@ Copy assignment vs Copy constructor:
 passing or returning objects by value);
 - if a new object does not have to be created before the copying can occur, the assignment operator is used.
 
-The rule four and a half:
+The rule of four and a half:
 If a class requires a user-defined destructor, copy constructor, copy assignment operator, move constructor or swap
-function (to implement copy and swap idiom), then it probably requires all of them. If we're user-defining any of these
-functions, it's probably because we're dealing with dynamic memory allocation.
+function (to implement "copy and swap" idiom), then it probably requires all of them. If we're user-defining any of
+these functions, it's probably because we're dealing with dynamic memory allocation.
 
 The rule of three/five/zero: https://en.cppreference.com/w/cpp/language/rule_of_three
 */
@@ -31,10 +31,8 @@ public:
   }
   ~MyString() { delete[] m_data; }
 
-  // Typically the self-assignment check is skipped for copy constructors, because the object being copy constructed is
-  // newly created.
-  MyString(const MyString&) =
-    default; // some compilers (gcc) warn if you have pointer members but no declared copy constructor
+  // We could also define copy constructor to properly init `m_data`
+  MyString(const MyString&) = delete;
 
   /*
   Compiler provides an implicit public copy assignment operator for your class if you do not provide a user-defined one.
@@ -61,7 +59,7 @@ MyString& MyString::operator=(const MyString& str)
   /*
   It's sometimes not necessary to check for self-assignment. But sometimes it's crucial like below. If MyString is
   self-assigned, m_data of `str` is deleted before doing copy.
-  NOTE: a better way to handle self-assignment issues is via what's called the copy and swap idiom (as a way to
+  NOTE: a better way to handle self-assignment issues is via what's called the "copy and swap" idiom (as a way to
   implement the rule of 4 and a half, https://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom).
   NOTE: current implementation doesn't provide strong exception guarantee. `new` may fail but m_data will already be
   destroyed. We can rearrange operations: allocate memory, copy m_data to it, and then `delete[]` m_data and reassign

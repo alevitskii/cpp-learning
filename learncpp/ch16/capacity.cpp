@@ -61,7 +61,7 @@ int main()
   printCapLen(v); // capacity 0, reallocation happened
 
   /*
-  A subscript is only valid if it is between 0 and the vector’s length (not its capacity)!
+  A subscript is only valid if it is between 0 and the vector's length (not its capacity)!
 
   To increase the number of elements in a std::vector:
   - use resize() when accessing a vector via indexing. This changes the length of the vector so your indices will be

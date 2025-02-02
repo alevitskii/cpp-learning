@@ -5,7 +5,7 @@
 class Person
 {
   std::string m_name;
-  std::weak_ptr<Person> m_partner; // note: This is now a std::weak_ptr
+  std::weak_ptr<Person> m_partner; // note: This is a std::weak_ptr
 
 public:
   Person(const std::string& name) : m_name(name) { std::cout << m_name << " created\n"; }
@@ -25,9 +25,10 @@ public:
 
   std::shared_ptr<Person> getPartner() const
   {
-    return m_partner.lock();
-  } // use lock() to convert weak_ptr to shared_ptr, weak_ptr can't be used on it's own (`->`, etc). It's ok that
+    // use lock() to convert weak_ptr to shared_ptr, weak_ptr can't be used on it's own (`->`, etc). It's ok that
     // `partner` ptr is created on the caller side, it will be destroyed and won't do harm
+    return m_partner.lock();
+  }
   const std::string& getName() const { return m_name; }
 };
 

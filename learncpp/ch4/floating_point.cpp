@@ -4,7 +4,7 @@
 
 int main()
 {
-  // The digits in the significand (the part before the ‘e’) are called the significant digits.
+  // The digits in the significand (the part before the 'e') are called the significant digits.
   // 4 significant digits
   double a{ 1.345e2 };
   // 6 significant digits, it's equal to 1.345e2 but states the precision

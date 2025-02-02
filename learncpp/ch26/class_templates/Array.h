@@ -26,8 +26,7 @@ public:
   void erase()
   {
     delete[] m_data;
-    // We need to make sure we set m_data to 0 here, otherwise it will
-    // be left pointing at deallocated memory!
+    // We need to make sure we set m_data to 0 here, otherwise it will be left pointing at deallocated memory!
     m_data = nullptr;
     m_length = 0;
   }

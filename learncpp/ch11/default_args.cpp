@@ -19,7 +19,7 @@ void print3(std::string_view s) { std::cout << s << '\n'; }
 
 void print3(char c = ' ') { std::cout << c << '\n'; }
 
-// Default values are not part of a function’s signature, so these function declarations are differentiated overloads.
+// Default values are not part of a function's signature, so these function declarations are differentiated overloads.
 void print4(int x); // signature print(int)
 void print4(int x, int y = 10); // signature print(int, int)
 void print4(int x, double y = 20.5); // signature print(int, double)

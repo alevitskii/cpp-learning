@@ -11,7 +11,7 @@ Static local vars have a block scope but lifetime of global vars.
 
 They are often used to avoid expensive init each time when a function is called.
 They can also be made const or constexpr.
-Non-const local vars should generally be avoided. If used, ensure the variable never needs to be reset, and isn’t used
+Non-const local vars should generally be avoided. If used, ensure the variable never needs to be reset, and isn't used
 to alter program flow.
 */
 void incrementAndPrint()

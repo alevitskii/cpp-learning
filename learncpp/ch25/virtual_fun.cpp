@@ -57,7 +57,7 @@ public:
   virtual ~Animal() = default;
 
   /*
-  It's possible to make the assignment operator virtual but it required extra care.
+  It's possible to make the assignment operator virtual but it requires extra care.
   */
 };
 
@@ -93,8 +93,8 @@ public:
   Use the virtual keyword on virtual functions in a base class.
   Use the override specifier (but not the virtual keyword) on override functions in derived classes. This includes
   virtual destructors.
-  If a member function is both const and an override, the const must be listed first. const override is correct,
-  override const is not.
+  If a member function is both const and an override, the const must be listed first. `const override` is correct,
+  `override const` is not.
 
   `final` means we disallow overriding the function in further derived classes
   */

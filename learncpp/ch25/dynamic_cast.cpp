@@ -33,9 +33,9 @@ Base* getObject(bool returnDerived)
 }
 
 /*
-Also note that there are several cases where downcasting using dynamic_cast will not work:
+Note that there are several cases where downcasting using dynamic_cast will not work:
 - with protected or private inheritance;
-- for classes that do not declare or inherit any virtual functions (and thus don’t have a virtual table);
+- for classes that do not declare or inherit any virtual functions (and thus don't have a virtual table);
 - in certain cases involving virtual base classes (see
 https://learn.microsoft.com/en-us/cpp/cpp/dynamic-cast-operator?view=msvc-170&redirectedfrom=MSDN for an example of some
 of these cases, and how to resolve them).

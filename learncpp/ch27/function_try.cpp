@@ -6,7 +6,7 @@ Use function try blocks when you need a constructor to handle an exception throw
 Function type                   Can resolve exceptions via return statement         Behavior at end of catch block
 Constructor                     No, must throw or rethrow                           Implicit rethrow
 Destructor                      Yes                                                 Implicit rethrow
-Non-value returning function	Yes                                                 Resolve exception
+Non-value returning function    Yes                                                 Resolve exception
 Value-returning function        Yes                                                 Undefined behavior
 
 Avoid letting control reach the end of a function-level catch block. Instead, explicitly throw, rethrow, or return.

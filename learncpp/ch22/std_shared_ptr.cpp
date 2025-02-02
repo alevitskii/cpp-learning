@@ -26,7 +26,7 @@ int main()
   auto ptr1{ std::make_shared<Resource>() };
   {
     /*
-    Always make a copy of an existing std::shared_ptr if you need more than one std::shared_ptr pointing to the same
+    Always make a copy of an existing std::shared_ptr if you need more than one std::shared_ptr pointing at the same
     resource. Two pointers created independently (not through a copy) won't know about each other and will both try to
     destroy the object.
     */

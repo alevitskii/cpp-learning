@@ -29,7 +29,7 @@ Functions that are potentially throwing (if not implicitly-declared or defaulted
 
 An exception safety guarantee is a contractual guideline about how functions or classes will behave in the event an
 exception occurs. There are four levels of exception safety guarantees:
-- no guarantee -- There are no guarantees about what will happen if an exception is thrown (e.g. a class may be left in
+- no guarantee -- there are no guarantees about what will happen if an exception is thrown (e.g. a class may be left in
 an unusable state);
 - basic guarantee -- if an exception is thrown, no memory will be leaked and the object is still usable, but the program
 may be left in a modified state;
@@ -46,7 +46,7 @@ Make copy constructors, copy assignment operators, destructor noexcept when you 
 Use noexcept on other functions to express a no-fail or no-throw guarantee.
 
 If you are uncertain whether a function should have a no-fail/no-throw guarantee, err on the side of caution and do not
-mark it with noexcept
+mark it with noexcept.
 */
 
 class Doomed
@@ -102,8 +102,8 @@ int main()
   std::cout << std::boolalpha; // print boolean as true/false
   tester(1);
   std::cout << "Test successful\n\n";
-  tester(2);
-  std::cout << "Test successful\n";
+  // tester(2); // terminates
+  // std::cout << "Test successful\n";
 
   // noexcept can be used to tell if the compiler thinks the expression will throw an exception
   constexpr bool b1{ noexcept(5 + 3) }; // true; ints are non-throwing

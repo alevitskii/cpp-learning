@@ -1,7 +1,7 @@
 #include <iostream>
 #include <utility> // for std::to_underlying() (C++23)
 
-// Favor scoped enumerations over unscoped enumerations unless there’s a compelling reason to do otherwise.
+// Favor scoped enumerations over unscoped enumerations unless there's a compelling reason to do otherwise.
 
 // Scoped enums are not implicitly converted to integer, enumerators are inside the scope of enum.
 enum class Color // scoped enumeration

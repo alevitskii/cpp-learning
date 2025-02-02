@@ -53,7 +53,7 @@ public:
   }
 
   using Base::print; // make all Base::print() functions eligible for overload resolution
-  void print(double) { std::cout << "Derived::print(double)"; }
+  void print(double) { std::cout << "Derived::print(double)\n"; }
 
   // can delete in derived. Note that we can access it directly from Base or casting Derived to Base&
   void toDelete() const = delete;
@@ -87,7 +87,7 @@ int main()
   d.print(2.3); // calls Derived version of print(double)
 
   // d.changeAccessLevel(); // error
-  // We cast to a Base& rather than a Base to avoid making a copy of the Base portion of Derived.
+  // We cast to a Base& rather than a Base to avoid making a copy of the Base portion of Derived (slicing).
   static_cast<Base&>(d).changeAccessLevel(); // can call because of casting
 
   return 0;

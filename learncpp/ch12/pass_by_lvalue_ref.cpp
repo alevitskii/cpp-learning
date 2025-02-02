@@ -2,7 +2,7 @@
 
 /*
 As a rule of thumb, pass fundamental types by value and class types by const reference.
-If you aren’t sure what to do, pass by const reference, as you’re less likely to encounter UB.
+If you aren't sure what to do, pass by const reference, as you're less likely to encounter UB.
 
 The following are often passed by value (because it is more efficient):
 - Enumerated types (unscoped and scoped enumerations);
@@ -13,7 +13,7 @@ std::optional, std::expected).
 
 Pass by reference should be used for the following:
 - Arguments that need to be modified by the function;
-- Types that aren’t copyable (such as std::ostream);
+- Types that aren't copyable (such as std::ostream);
 - Types where copying has ownership implications that we want to avoid (e.g. std::unique_ptr, std::shared_ptr);
 - Types that have virtual functions or are likely to be inherited from (due to object slicing concerns).
 */

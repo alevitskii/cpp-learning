@@ -1,4 +1,3 @@
-#include <functional> // for std::reference_wrapper
 #include <iostream>
 #include <string_view>
 #include <vector>

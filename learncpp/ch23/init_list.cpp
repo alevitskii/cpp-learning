@@ -48,7 +48,7 @@ public:
   ```
   IntArray array{};
   array = { 1, 3, 5, 7, 9, 11 }; // Here's our list assignment statement
-  std::cout << array[0] << ' ' // UB
+  std::cout << array[0] << ' '; // UB
   ```
   will cause UB. During assignment temp IntArray object will be constructed from init list and after that we'll do a
   shallow copy -> temp object is destroyed at the end of the statement and `array` is left with dangling pointer to
