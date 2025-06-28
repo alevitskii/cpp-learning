@@ -4,6 +4,11 @@
 #include <iomanip> // for std::setw (which sets the width of the subsequent output)
 #include <iostream>
 
+// The C++ standard defines the following terms:
+// - the standard integer types are short, int, long, long long (including their signed and unsigned variants).
+// - the integral types are bool, the various char types, and the standard integer types.
+// "integral types" only includes fundamental types: `enum` and `enum class` are not integrals
+
 int main()
 {
   std::cout << "A byte is " << CHAR_BIT << " bits\n\n";

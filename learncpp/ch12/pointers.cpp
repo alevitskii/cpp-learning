@@ -62,6 +62,8 @@ int main()
   Non-const pointer to const value is not allowed.
   Pointer to const can point to const and non-const lvalues but not to rvalues because they don't have an address.
 
+  Prefer pointer-to-const function parameters over pointer-to-non-const function parameters, unless the function needs to modify the object passed in.
+  Do not make function parameters const pointers unless there is some specific reason to do so.
   Prefer pass by reference to pass by address unless you have a specific reason to use pass by address.
 
   It's possible to have reference of a pointer. For example, if you want to change what pointer is pointing at inside a

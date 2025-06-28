@@ -1,5 +1,21 @@
 /*
-Floating-point and intergral promotions are safe. They are done implicilty for the purpose of better performance.
+Category			Standard Conversion		Description
+Value transformation		Lvalue-to-rvalue		Converts lvalue expression to rvalue expression
+Value transformation		Array-to-pointer		Converts C-style array to pointer to first array element (a.k.a. array decay)
+Value transformation		Function-to-pointer		Converts function to function pointer
+Value transformation		Temporary materialization	Converts value to temporary object
+Qualification conversion	Qualification conversion	Adds or removes const or volatile from types
+Numeric promotions		Integral promotions		Converts smaller integral types to int or unsigned int
+Numeric promotions		Floating point promotions	Converts float to double
+Numeric conversions		Integral conversions		Integral conversions that aren’t integral promotions
+Numeric conversions		Floating point conversions	Floating point conversions that aren’t floating point promotions
+Numeric conversions		Integral-floating conversions	Converts integral and floating point types
+Numeric conversions		Boolean conversions		Converts integral, unscoped enumeration, pointer, or pointer-to-memver to bool
+Pointer conversions		Pointer conversions		Converts std::nullptr to pointer, or pointer to void pointer or base class
+Pointer conversions		Pointer-to-member conversions	Converts std::nullptr to pointer-to-member or pointer-to-member of base class to pointer-to-member of derived class
+Pointer conversions		Function pointer conversions	Converts pointer-to-noexcept-function to pointer-to-function
+
+Floating-point and integral promotions are safe. They are done implicilty for the purpose of better performance.
 For example, if working with ints is faster than with short, compiler will promote short to int.
 Often compiler opt in for numeric promotions rather than conversions.
 

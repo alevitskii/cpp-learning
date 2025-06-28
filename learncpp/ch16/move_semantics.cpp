@@ -16,6 +16,8 @@ std::vector<int> doSomething(std::vector<int> v2)
   return v3; // 4 -- actually return value
 }
 
+std::vector<int> doSomething2(std::vector<int> v2) { std::vector v3{ v2[0] }; }
+
 int main()
 {
   std::vector v1{ 5 }; // 1 -- construct value to be passed to function

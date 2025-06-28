@@ -26,5 +26,8 @@ int main()
   int i{ 100 };
   i = static_cast<int>(i / 2.5);
 
+  // Prefer static_cast over initializing a temporary object (`static_cast<int>(x)` instead of `int{x}`)
+  // when a conversion is desired.
+
   return 0;
 }
